@@ -1,66 +1,257 @@
+/* Base styles */
 .render {
-  flex: 1;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, sans-serif;
+  padding: 40px;
+  transition: background-color 0.3s, color 0.3s, opacity 0.3s ease-in-out;
+  opacity: 1;
+}
+
+/* Fade transition for location rotation */
+.render--fading {
+  opacity: 0;
+}
+
+/* Light theme */
+.render--light {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #ffffff;
+}
+
+/* Dark theme */
+.render--dark {
+  background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
+  color: #ffffff;
+}
+
+/* Loading, Error, Empty states */
+.render__loading,
+.render__error,
+.render__empty {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  font-size: 20px;
+  text-align: center;
+}
+
+.render__error {
+  color: #ffcccc;
+}
+
+.render__error p {
+  margin: 8px 0;
+}
+
+/* Current Weather Section */
+.render__current {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-bottom: 40px;
+}
+
+.render__current-header {
+  display: flex;
   justify-content: space-between;
-  padding: 3rem 0 5rem;
-  background: rgb(18, 25, 33);
+  align-items: flex-start;
 }
 
-.render__logo {
-  max-width: 35rem;
+.render__location {
+  font-size: 32px;
+  font-weight: 600;
+  margin: 0;
+  letter-spacing: -0.5px;
 }
 
-.render__hero {
+.render__feels-like {
+  font-size: 18px;
+  opacity: 0.9;
+  margin-top: 8px;
+}
+
+.render__current-main {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.render__temp-container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.render__temp {
+  font-size: 120px;
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: -4px;
+}
+
+.render__icon {
+  font-size: 100px;
+  line-height: 1;
+}
+
+.render__current-details {
+  display: flex;
+  gap: 32px;
+  align-items: center;
+}
+
+.render__detail {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 20px;
+}
+
+.render__detail-icon {
+  font-size: 24px;
+}
+
+.render__detail-value {
+  font-weight: 500;
+}
+
+.render__current-meta {
+  margin-top: 8px;
+}
+
+.render__weather-text {
+  font-size: 24px;
+  font-weight: 400;
+  opacity: 0.95;
+}
+
+/* Forecast Section */
+.render__forecast {
+  display: flex;
+  gap: 24px;
+  padding: 20px 0;
+  overflow-x: auto;
+  border-top: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.render__forecast-item {
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 12px;
+  min-width: 80px;
+  padding: 16px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+  transition: transform 0.2s, background-color 0.2s;
 }
 
-.render__hero-title {
-  font-size: 4rem;
-  line-height: 1.8em;
-  margin-bottom: 4rem;
+.render__forecast-item:hover {
+  transform: translateY(-4px);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.render__forecast-temp {
+  font-size: 24px;
   font-weight: 600;
 }
 
-.render__hero-subtitle {
-  font-size: 2.5rem;
+.render__forecast-temp-max {
+  font-size: 18px;
+  font-weight: 400;
+  opacity: 0.7;
 }
 
-.render__docs-information {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.render__forecast-icon {
+  font-size: 40px;
 }
 
-.render__docs-information-title {
-  font-size: 1.6rem;
-  line-height: 1.8em;
-  margin-bottom: 0.8rem;
-  font-weight: 600;
+.render__forecast-label {
+  font-size: 16px;
+  font-weight: 500;
   text-align: center;
+  opacity: 0.9;
 }
 
-.render__docs-information-text {
-  font-size: 1.3rem;
-  line-height: 1.4em;
-  margin-bottom: 2.4rem;
-  max-width: 60rem;
-  text-align: center;
+/* Responsive Design */
+@media (max-width: 768px) {
+  .render {
+    padding: 20px;
+  }
+
+  .render__location {
+    font-size: 24px;
+  }
+
+  .render__temp {
+    font-size: 80px;
+    letter-spacing: -2px;
+  }
+
+  .render__icon {
+    font-size: 60px;
+  }
+
+  .render__feels-like {
+    font-size: 14px;
+  }
+
+  .render__current-details {
+    gap: 20px;
+  }
+
+  .render__detail {
+    font-size: 16px;
+  }
+
+  .render__weather-text {
+    font-size: 18px;
+  }
+
+  .render__forecast {
+    gap: 12px;
+  }
+
+  .render__forecast-item {
+    min-width: 60px;
+    padding: 12px;
+    gap: 8px;
+  }
+
+  .render__forecast-temp {
+    font-size: 20px;
+  }
+
+  .render__forecast-icon {
+    font-size: 32px;
+  }
+
+  .render__forecast-label {
+    font-size: 14px;
+  }
 }
 
-.render__docs-information-button {
-  display: flex;
-  align-items: center;
-  background: rgb(248, 180, 53);
-  text-transform: uppercase;
-  font-size: 1.5rem;
-  height: 3.1rem;
-  text-decoration: none;
-  color: black;
-  font-weight: bold;
-  padding: 0 1.75rem;
-  border-radius: 0.5rem;
+/* Scrollbar styling for forecast */
+.render__forecast::-webkit-scrollbar {
+  height: 8px;
+}
+
+.render__forecast::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+}
+
+.render__forecast::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+}
+
+.render__forecast::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.5);
 }
