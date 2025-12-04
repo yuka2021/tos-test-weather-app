@@ -1,0 +1,66 @@
+.render {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 3rem 0 5rem;
+  background: rgb(18, 25, 33);
+}
+
+.render__logo {
+  max-width: 35rem;
+}
+
+.render__hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.render__hero-title {
+  font-size: 4rem;
+  line-height: 1.8em;
+  margin-bottom: 4rem;
+  font-weight: 600;
+}
+
+.render__hero-subtitle {
+  font-size: 2.5rem;
+}
+
+.render__docs-information {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.render__docs-information-title {
+  font-size: 1.6rem;
+  line-height: 1.8em;
+  margin-bottom: 0.8rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.render__docs-information-text {
+  font-size: 1.3rem;
+  line-height: 1.4em;
+  margin-bottom: 2.4rem;
+  max-width: 60rem;
+  text-align: center;
+}
+
+.render__docs-information-button {
+  display: flex;
+  align-items: center;
+  background: rgb(248, 180, 53);
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  height: 3.1rem;
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  padding: 0 1.75rem;
+  border-radius: 0.5rem;
+}

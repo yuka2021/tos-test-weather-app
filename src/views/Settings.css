@@ -1,0 +1,28 @@
+.settings {
+  padding: 16px;
+  font-family: 'Rubik', sans-serif;
+  font-feature-settings: "rlig" 1, "calt" 1;
+}
+
+.settings__field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 12px;
+}
+
+.settings__label {
+  font-size: 12px;
+  margin-bottom: 6px;
+  font-weight: 500;
+}
+
+.settings__input {
+  flex: 1;
+  font-size: 13px;
+  line-height: 1em;
+  padding: 8px 12px;
+  border: 1px solid hsl(212 24% 19%);
+  border-radius: 6px;
+  background: hsl(212 28% 10%);
+  color: hsl(210 40% 88%);
+}
