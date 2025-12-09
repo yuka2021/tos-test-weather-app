@@ -255,3 +255,310 @@
 .render__forecast::-webkit-scrollbar-thumb:hover {
   background: rgba(255, 255, 255, 0.5);
 }
+
+/* ============================================
+   LANDSCAPE LAYOUT (16:9) - Full Screen
+   ============================================ */
+.render--landscape {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 60px 80px;
+}
+
+.render--landscape .render__current {
+  margin-bottom: 60px;
+}
+
+.render--landscape .render__current-header {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  margin-bottom: 40px;
+}
+
+.render--landscape .render__location {
+  font-size: 48px;
+  font-weight: 600;
+}
+
+.render--landscape .render__feels-like {
+  font-size: 24px;
+  opacity: 0.8;
+}
+
+.render--landscape .render__current-main {
+  justify-content: flex-start;
+  margin-bottom: 40px;
+}
+
+.render--landscape .render__temp-container {
+  gap: 40px;
+}
+
+.render--landscape .render__temp {
+  font-size: 180px;
+  font-weight: 200;
+  letter-spacing: -6px;
+}
+
+.render--landscape .render__icon {
+  font-size: 140px;
+}
+
+.render--landscape .render__current-details {
+  display: flex;
+  gap: 60px;
+  font-size: 28px;
+}
+
+.render--landscape .render__detail-icon {
+  font-size: 32px;
+}
+
+.render--landscape .render__forecast {
+  display: flex;
+  gap: 32px;
+  padding: 30px 0 0 0;
+  border-top: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.render--landscape .render__forecast-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  min-width: 120px;
+  padding: 24px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 16px;
+}
+
+.render--landscape .render__forecast-temp {
+  font-size: 32px;
+  font-weight: 600;
+}
+
+.render--landscape .render__forecast-icon {
+  font-size: 56px;
+}
+
+.render--landscape .render__forecast-label {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.render--landscape .render__forecast-temp-max {
+  font-size: 24px;
+  opacity: 0.7;
+}
+
+/* ============================================
+   SQUARE LAYOUT (1:1) - Centered Design
+   ============================================ */
+.render--square {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 60px;
+  text-align: center;
+}
+
+.render--square.render--light {
+  background: linear-gradient(135deg, #56ab2f 0%, #a8e063 100%);
+}
+
+.render--square.render--dark {
+  background: linear-gradient(135deg, #134e5e 0%, #71b280 100%);
+}
+
+.render--square .render__current {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 0;
+}
+
+.render--square .render__current-header {
+  display: none;
+}
+
+.render--square .render__current-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+.render--square .render__temp-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.render--square .render__icon {
+  font-size: 120px;
+  order: -1;
+}
+
+.render--square .render__temp {
+  font-size: 140px;
+  font-weight: 200;
+  letter-spacing: -4px;
+}
+
+.render--square .render__feels-like {
+  font-size: 32px;
+  font-weight: 400;
+  opacity: 0.9;
+  margin-top: 20px;
+}
+
+.render--square .render__current-details {
+  display: none;
+}
+
+.render--square .render__forecast {
+  display: none;
+}
+
+/* ============================================
+   TALL LAYOUT (1:10) - Vertical Stacked
+   ============================================ */
+.render--tall {
+  display: flex;
+  flex-direction: column;
+  padding: 40px 30px;
+  min-height: 100vh;
+  overflow-y: auto;
+}
+
+.render--tall.render--light {
+  background: linear-gradient(135deg, #2193b0 0%, #6dd5ed 100%);
+}
+
+.render--tall.render--dark {
+  background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
+}
+
+.render--tall .render__current {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.render--tall .render__current-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 30px;
+}
+
+.render--tall .render__location {
+  font-size: 28px;
+  font-weight: 600;
+}
+
+.render--tall .render__feels-like {
+  font-size: 18px;
+  opacity: 0.85;
+}
+
+.render--tall .render__current-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.render--tall .render__temp-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.render--tall .render__icon {
+  font-size: 100px;
+  order: -1;
+}
+
+.render--tall .render__temp {
+  font-size: 120px;
+  font-weight: 200;
+  letter-spacing: -4px;
+}
+
+.render--tall .render__current-details {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  font-size: 20px;
+  margin-bottom: 40px;
+}
+
+.render--tall .render__detail {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 22px;
+}
+
+.render--tall .render__detail-icon {
+  font-size: 28px;
+}
+
+.render--tall .render__forecast {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 20px 0;
+  border-top: 2px solid rgba(255, 255, 255, 0.3);
+  overflow-x: visible;
+}
+
+.render--tall .render__forecast-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+  min-width: auto;
+  padding: 20px 24px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+}
+
+.render--tall .render__forecast-label {
+  flex: 1;
+  text-align: left;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.render--tall .render__forecast-icon {
+  font-size: 40px;
+  flex-shrink: 0;
+}
+
+.render--tall .render__forecast-temp {
+  font-size: 28px;
+  font-weight: 600;
+  min-width: 60px;
+  text-align: right;
+}
+
+.render--tall .render__forecast-temp-max {
+  font-size: 22px;
+  opacity: 0.7;
+  min-width: 50px;
+  text-align: right;
+}

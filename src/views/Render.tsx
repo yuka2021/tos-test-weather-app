@@ -18,6 +18,39 @@ export function Render() {
   const [locationName, setLocationName] = useState<string>("");
   const [currentLocationIndex, setCurrentLocationIndex] = useState(0);
   const [isFading, setIsFading] = useState(false);
+  const [aspectRatio, setAspectRatio] = useState<string>("landscape");
+
+  // Detect aspect ratio on mount and window resize
+  useEffect(() => {
+    const detectAspectRatio = () => {
+      const width = window.innerWidth;
+      const height = window.innerHeight;
+      const ratio = width / height;
+
+      console.log(
+        `📐 [Render] Aspect ratio: ${ratio.toFixed(2)} (${width}x${height})`
+      );
+
+      // Determine layout type based on aspect ratio
+      if (ratio >= 1.5) {
+        // Landscape/wide (16:9 is ~1.78)
+        setAspectRatio("landscape");
+      } else if (ratio >= 0.7 && ratio < 1.3) {
+        // Square (1:1)
+        setAspectRatio("square");
+      } else if (ratio < 0.7) {
+        // Tall/portrait (1:10 is 0.1)
+        setAspectRatio("tall");
+      } else {
+        setAspectRatio("landscape");
+      }
+    };
+
+    detectAspectRatio();
+    window.addEventListener("resize", detectAspectRatio);
+
+    return () => window.removeEventListener("resize", detectAspectRatio);
+  }, []);
 
   // Subscribe to config changes from Settings
   useEffect(() => {
@@ -282,7 +315,7 @@ export function Render() {
 
   return (
     <div
-      className={`render render--${config.theme} ${
+      className={`render render--${config.theme} render--${aspectRatio} ${
         isFading ? "render--fading" : ""
       }`}
     >
